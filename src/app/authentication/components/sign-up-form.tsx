@@ -28,7 +28,7 @@ import { authClient } from "@/lib/auth-client";
 
 const formSchema = z
   .object({
-    name: z.string("Nome inválido.").trim().min(1, "Nome é obrigatório"),
+    name: z.string("Nome inválido.").trim().min(1, "Nome é obrigatório."),
     email: z.email("E-mail inválido."),
     password: z.string("Senha inválida.").min(8, "Senha inválida."),
     passwordConfirmation: z.string("Senha inválida.").min(8, "Senha inválida."),
@@ -38,7 +38,7 @@ const formSchema = z
       return data.password === data.passwordConfirmation;
     },
     {
-      error: "As senhas não coincidem",
+      error: "As senhas não coincidem.",
       path: ["passwordConfirmation"],
     },
   );
@@ -70,7 +70,7 @@ const SignUpForm = () => {
           if (error.error.code === "USER_ALREADY_EXISTS") {
             toast.error("E-mail já cadastrado.");
             return form.setError("email", {
-              message: "E-mail já cadastrado,",
+              message: "E-mail já cadastrado.",
             });
           }
           toast.error(error.error.message);
@@ -95,9 +95,9 @@ const SignUpForm = () => {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Name</FormLabel>
+                    <FormLabel>Nome</FormLabel>
                     <FormControl>
-                      <Input placeholder="Digite o seu nome" {...field} />
+                      <Input placeholder="Digite seu nome" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -110,7 +110,7 @@ const SignUpForm = () => {
                   <FormItem>
                     <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input placeholder="Digite o seu email" {...field} />
+                      <Input placeholder="Digite seu email" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -124,7 +124,7 @@ const SignUpForm = () => {
                     <FormLabel>Senha</FormLabel>
                     <FormControl>
                       <Input
-                        placeholder="Digite a sua senha"
+                        placeholder="Digite sua senha"
                         type="password"
                         {...field}
                       />
