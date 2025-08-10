@@ -1,15 +1,4 @@
 import { Header } from "@/components/common/header";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import SignInForm from "./components/sign-in-form";
@@ -29,7 +18,6 @@ const Authentication = async () => {
           <TabsContent value="sign-in" className="w-full">
             <SignInForm />
           </TabsContent>
-
           <TabsContent value="sign-up" className="w-full">
             <SignUpForm />
           </TabsContent>
