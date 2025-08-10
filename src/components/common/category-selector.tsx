@@ -1,3 +1,5 @@
+import { Link } from "lucide-react";
+
 import { categoryTable } from "@/db/schema";
 
 import { Button } from "../ui/button";
@@ -16,7 +18,7 @@ const CategorySelector = ({ categories }: CategorySelectorProps) => {
             variant="ghost"
             className="rounded-full bg-white text-xs font-semibold"
           >
-            {category.name}
+            <Link href={`/category/${category.slug}`}></Link>
           </Button>
         ))}
       </div>
